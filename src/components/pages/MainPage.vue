@@ -73,7 +73,7 @@
   color: #fefefe;
 }
 
-/*------------------------*/
+/*-----------Animations-------------*/
 .slide-fade-enter-active {
   transition: all 0.3s ease-out;
 }
@@ -85,6 +85,23 @@
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
+}
+
+
+/*--------------Adaptive------------*/
+@media (max-width:779px){
+  .main{
+    height: 60vh;
+  }
+  .intro{
+    &__inner{
+      .intro__title {
+      }
+    }
+  }
+  .title{
+    font-size: 72px;
+  }
 }
 
 </style>

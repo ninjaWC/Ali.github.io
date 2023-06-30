@@ -2,12 +2,6 @@
 import TaskForm from '@/components/TaskForm.vue';
 import TaskList from '@/components/TaskList.vue';
 export default {
-  async mounted(){
-      const data = localStorage.getItem(`${this.$store.state.tasks}`);
-      console.log(data);
-      JSON.parse(data);
-      // this.$store.
-  },
 
   components:{
     TaskForm,
@@ -105,8 +99,9 @@ hr{
         min-width: 500px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
         .actions__item{
+          margin-right: 200px;
           .action__name {
             font-size: 20px;
             & span{
@@ -150,4 +145,49 @@ hr{
       }
     }
   }
+
+/*---------------Adaptive-------------*/
+@media (max-width:662px) {
+  .task{
+    &__inner{
+      padding: 0px 20px;
+      & .task__actions{
+        min-width: 250px;
+        & .actions__item{
+          margin-right: 100px;
+          & .action__name span{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width:662px) {
+  .task{
+    &__inner{
+      padding: 0px 20px;
+      & hr{
+        width: 300px;
+      }
+      & .task__actions{
+        flex-direction: column;
+        align-items: flex-start;
+        min-width: 250px;
+        & .actions__item{
+          margin-right: 100px;
+          & .action__name span{
+            font-size: 14px;
+          }
+        }
+        & .actions__button{
+          & button{
+            margin-top: 20px;
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

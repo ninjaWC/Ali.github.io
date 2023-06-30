@@ -9,15 +9,16 @@ const store = new Vuex.Store({
   mutations:{
     // add
     createTask(state, task){
-      task.id=Date.now();
-      state.tasks.push(task);
-      let tasksItem = state.tasks.find(t=>t.id == task.id);
-      localStorage.setItem(`${tasksItem.id}`, JSON.stringify(tasksItem));
+      if(task != ''){
+        task.id=Date.now();
+        state.tasks.push(task);
+      }
+      localStorage.setItem(`tasks`, JSON.stringify(state.tasks));
     },
     // delete
     deleteTask(state, task){
       state.tasks = state.tasks.filter(t => t.id !== task.id);
-      localStorage.removeItem(task.id);
+      localStorage.setItem('tasks', JSON.stringify(state.tasks));
     },
   },
   getters:{

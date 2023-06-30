@@ -66,7 +66,11 @@
         taskItem: this.tasks,
       }
     },
-    methods:{
+    async mounted(){
+      const data = await localStorage.getItem(`tasks`);
+      if(data){
+        this.$store.state.tasks = JSON.parse(data);
+      }
     },
   }
 </script>

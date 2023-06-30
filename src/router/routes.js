@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 // import HeaderMain from '../components/HeaderMain.vue'
-import MainPage from '../components/MainPage.vue'
-import TasksPage from '../components/TasksPage.vue'
+import MainPage from '../components/pages/MainPage.vue'
+import TasksPage from '../components/pages/TasksPage.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
