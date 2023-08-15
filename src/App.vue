@@ -19,6 +19,10 @@
   <router-view></router-view>
 </template>
 
-<style scoped>
-
+<style>
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+}
 </style>
